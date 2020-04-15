@@ -8,8 +8,26 @@ if (login) {
     window.location.replace(`../Login/login.html`);
 }
 
-document.addEventListener('onmousemove', (e) => {
-    document.querySelector('#mouseCoordinates').innerHTML = e.clientX + ' ' + e.clientY;
+
+//EVENT LISTENERS TASK
+window.addEventListener('load',() => {
+    console.log('page is fully loaded!');
+
+    window.addEventListener('mousemove', (e) => {
+        document.querySelector('#mouseCoordinates').innerHTML = e.x + ' ' + e.y;
+    });
+
+    document.querySelector('#mouseCoordinates').addEventListener('click', (e) => {
+        console.log(`Your mouse coordinates are: ${e.x + ' ' + e.y}`);
+    });
+
+    document.querySelector('#firstName').addEventListener('mouseover', (e) => {
+        console.log('Yep, it is your first name!');
+    });
+
+    document.querySelector('#lastName').addEventListener('mouseout', (e) => {
+        console.log('Yep, it is your last name!');
+    });
 });
 
 function logout() {
